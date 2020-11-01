@@ -1,0 +1,35 @@
+10_31
+
+-- 在图书表中新增一条记录：Java核心技术、作者“Cay S. Horstman”，价格56.43，分类为“计算机技术”
+
+insert into book (name,author,price,sort) values
+    ('Java核心技术','Cay S. Horstman',56.43,'计算机技术');
+
+-- 在以上创建的商品表中插入一条数据：名称为“学生书包”、价格18.91、库存101、描述为空
+
+insert into commodity (name,price,num,resumes) values('学生书包',18.91,101,'空'
+);
+
+-- 查询用户user表中，满足以下条件的用户数据：1. ID在1至200或300至500，且账号accout列不为空 
+-- 2. 充值金额amount在1000以上。
+select * from user where ID BETWEEN 1 AND 200 or ID BETWEEN 300 AND 500 AND accout IS NOT NULL
+AND amount > 1000;
+
+    create table user (ID bigint,accout bigint, amount bigint);
+
+    insert into user (ID,accout,amount) values(23,1,1222),(400,2,1333);
+
+-- 查询book图书表中，作者author列不为空，或者满足条件：
+-- 价格price在50元以上且出版日期publish_date在2019年之后的图书信息
+
+SELECT * FROM book WHERE author IS NOT NULL OR price > 50 AND publish_data > '2019-01-01 00:00:00';
+
+-- 查询article文章表中，文章标题title为空，或者满足发表日期create_date在2019年1月1日之后
+
+SELECT * FROM article WHERE title IS NULL OR  create_date > '2019_01_01 00:00:00';
+
+-- 查询article文章表中，发表日期create_date在2019年1月1日上午10点30分至2019年11月10日下午4点2分的文章
+SELECT * FROM article WHERE create_date BETWEEN '2019-01-01 10:30:00' AND '2019-11-10 16:02:00';
+
+-- student学生表中，字段有姓名name，年龄age，要求查询姓张，并且年龄在18到25岁之间的学生
+SELECT * FROM student WHERE name like '张%' AND age BETWEEN 18 AND 25;

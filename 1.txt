@@ -1,0 +1,32 @@
+-- 设计一张图书表，包含以下字段：图书名称，图书作者、图书价格、图书分类
+
+CREATE TABLE IF NOT EXISTS book
+(name varchar(10),
+author varchar(5),
+price decimal(5,1),
+sort varchar(5));
+
+
+
+-- 设计一张老师表，包含以下字段：姓名、年龄、身高、体重、性别、学历、生日、身份证号
+
+CREATE TABLE IF NOT EXISTS teacher
+(name varchar(5),
+age int,
+high decimal(3,1),
+weight decimal(4,1),
+sex varchar(1),
+education varchar(5),
+birthday timestamp,
+id varchar(20)
+);
+
+-- 设计一张商品表，包含以下字段：商品名称、商品价格、商品库存、商品描述
+
+
+CREATE TABLE IF NOT EXISTS commodity(
+name varchar(5),
+price decimal(6,1),
+num int,
+resumes text
+);
